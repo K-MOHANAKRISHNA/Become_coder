@@ -98,3 +98,39 @@ int main(){
     cin>>n;
     print(1,n);
 }
+
+
+//sum of digits using recursion
+
+#include<bits/stdc++.h>
+using namespace std;
+int s=0;
+int sum(int n){
+    if(n==0){
+        return s;
+    }
+    s=s+n%10;
+    n=n/10;
+    sum(n);
+}
+int main(){
+    int n;
+    cin>>n;
+    cout<<sum(n);
+}
+
+//another model
+
+#include<bits/stdc++.h>
+using namespace std;
+int sum(int n){
+    if(n==0){
+        return n;
+    }
+    return n%10+sum(n/10);
+}
+int main(){
+    int n;
+    cin>>n;
+    cout<<sum(n);
+}
